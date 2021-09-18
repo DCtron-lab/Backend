@@ -1,13 +1,9 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+console.log(__dirname);
+app.use('/', (req, res, ) => {
+    res.sendFile(path.join(__dirname, "public/hello.txt"), 'test.txt')
+});
 
-//CRUD -> Create, Read, Update, Delete
-
-const slash = (req, res, next) => {
-    res.send = ("hello");
-};
-app.get('/', slash);
-
-app.listen(5000, () => {
-    console.log('Server listening on port 5000');
-}); // end app.listen()
+app.listen(5000);
